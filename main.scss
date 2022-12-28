@@ -1,0 +1,181 @@
+:root {
+    --clr-blue-400: hsl(215, 51%, 70%);
+    --clr-Cyan-400: hsl(178, 100%, 50%);
+    --clr-blue-900: hsl(217, 54%, 11%);
+    --clr-blue-800: hsl(216, 50%, 16%);
+    --clr-blue-700: hsl(215, 32%, 27%);
+    --clr-White: hsl(0, 0%, 100%);
+    --fw-bold: 600;
+    --fw-regular: 400;
+    --fw-light: 300;
+    --base-spacing: 1.5rem;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--clr-blue-900);
+
+    color: var(--clr-blue-400);
+    font-family: 'Outfit', sans-serif;
+}
+
+.card {
+   
+    display: flex;
+    flex-direction: column;
+
+    max-width: 350px;
+
+    padding: var(--base-spacing);
+    margin: 0 var(--base-spacing);
+
+    background-color: var(--clr-blue-800);
+
+    border-radius: 1rem;
+
+    box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.233) ;
+
+    .img {
+        border-radius: .7rem;
+        margin-bottom: 1.25rem;
+        position: relative;
+
+        &::after {
+            content: url(./images/icon-view.svg);
+            display: grid;
+            place-content: center;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: hsla(178, 100%, 50%, 0.5);
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: all 200ms ease;
+           
+        }
+        &:hover::after {
+            opacity: 1; 
+            transform:  scaleY(1);
+            
+        }
+    }
+
+    p {
+        margin-top: 0;
+        padding-top: 0;
+        font-weight: var(--fw-light);
+        padding-bottom: 1rem;
+    }
+
+    .title {
+        width: max-content;
+
+        color: var(--clr-White);
+        font-size: 1.2rem;
+        
+        padding-bottom: 1rem;
+
+        transition: all 200ms cubic-bezier(.79,.14,.15,.86);
+
+        &:hover {
+            color: var(--clr-Cyan-400);
+            letter-spacing: calc(1rem / 6);
+        }
+    }
+
+    .info {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+            color: var(--clr-Cyan-400);
+            font-weight: var(--fw-regular);
+
+            &::before {
+                content: url(./images/icon-ethereum.svg);
+                
+                position: relative;
+                right: 0.4rem;
+                top: 0.2rem  
+            }
+        }
+        .time::before {
+            content: url(./images/icon-clock.svg);
+
+            position: relative;
+            right: 0.25rem;
+            top: 0.13rem  
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 170%;
+
+            width: 100%;
+            height: calc(1rem / 16);
+
+            background-color: var(--clr-blue-400);
+            
+            
+        }
+        margin-bottom: 1rem;
+    }
+
+    .credit {
+        display: flex;
+        align-items: center;
+
+        &__img { 
+            width: 2.2rem;
+            height: 2.2rem;
+
+            background-image: url(./images/image-avatar.png);
+            background-position: center;
+            background-size: cover;
+
+            border-radius: 50%;
+            border: 2px solid var(--clr-White);
+
+            margin-right: .5rem;
+        }
+
+        span {
+            color: var(--clr-White);
+            transition: color, letter-spacing 200ms cubic-bezier(.79,.14,.15,.86);
+            &:hover {
+                color: var(--clr-Cyan-400);
+                letter-spacing: calc(1rem / 16);
+            }
+        }
+       margin-top: 1rem;
+    }
+}
+
+
+.attribution {
+    font-size: 11px;
+    position: absolute;
+    bottom:  10px;
+    
+
+    a {
+        color: var(--clr-Cyan-400);
+        text-decoration: none;
+        transition: all 200ms cubic-bezier(.19,.42,1,1.72);
+        &:hover {
+            text-decoration: underline;
+            letter-spacing: 1px;
+        }
+    }
+}
+
