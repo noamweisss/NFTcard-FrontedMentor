@@ -62,3 +62,6 @@ There are several ways that the card component could be further developed or imp
 * Refining the design and layout to create a more cohesive and visually appealing overall aesthetic
 
 There are many possibilities for continuing to improve and evolve the card component, and there is always room for growth and learning as a developer. As I continue to work on this project and take on new challenges, I hope to expand my skills and knowledge in the areas of HTML, CSS, and SASS.
+
+## links 
+* live site: https://noamweisss.github.io/NFTcard-FrontedMentor/
